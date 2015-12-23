@@ -3,19 +3,14 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
-<div data-ng-app="" data-ng-init="quantity=1;price=5">
-
-<h2>Cost Calculator</h2>
-
-Quantity: <input type="number" ng-model="quantity">
-Price: <input type="number" ng-model="price">
-
-<!--<p><b>Total in dollar:</b> {{quantity * price}}</p>-->
-<p>
-    <b>Total in dollar:</b>
-    <span ng-bind="quantity * price"></span>
-</p>
-
+<div data-ng-app="" data-ng-init="names=['Jani','Hege','Kai']">
+  <p>Looping with ng-repeat:</p>
+  <ul>
+    <li data-ng-repeat="man in names">
+      <!--{{ man }}-->
+      <span ng-bind="man"></span>
+    </li>
+  </ul>
 </div>
 
 </body>

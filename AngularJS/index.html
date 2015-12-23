@@ -3,17 +3,26 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
-<div ng-app="myApp" ng-controller="personCtrl">
+<div ng-app="myApp" ng-controller="costCtrl">
+
+Quantity: <input type="number" ng-model="quantity">
+Price: <input type="number" ng-model="price">
 
 <p>
-	The name is 
-	<!--{{ lastName | lowercase }}	-->
-	<span ng-bind="lastName | lowercase"></span>
+	Total = 
+	<!--{{ (quantity * price) | currency }}-->
+	{{ (quantity * price) | currency: "W" }}
 </p>
 
 </div>
 
-<script src="personController.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('costCtrl', function($scope) {
+    $scope.quantity = 1;
+    $scope.price = 9.99;
+});
+</script>
 
 </body>
 </html>

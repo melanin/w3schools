@@ -3,9 +3,10 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
-<div ng-app="">
- 	<p>Name: <input type="text" ng-model="name"></p>
- 	<p ng-bind="name"></p>
+<div ng-app="" ng-init="firstName='MELA'">
+
+<p>The name is <span ng-bind="firstName"></span></p>
+
 </div>
 
 </body>

@@ -3,22 +3,13 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
-<div ng-app="myApp" ng-controller="myCtrl">
-Name: <input ng-model="name">
-<!--<h1>You entered: {{name}}</h1>-->
-<h1>
-    You entered: <span ng-bind="name"></span>
-</h1>
-</div>
+<form ng-app="" name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+</form>
 
-<script>
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-    $scope.name = "John Doe";
-});
-</script>
-
-<p>Change the name inside the input field, and you will see the name in the header changes accordingly.</p>
+<p>Enter your e-mail address in the input field. AngularJS will display an errormessage if the address is not an e-mail.</p>
 
 </body>
 </html>

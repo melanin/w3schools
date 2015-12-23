@@ -3,14 +3,18 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
-<div data-ng-app="" data-ng-init="names=['Jani','Hege','Kai']">
-  <p>Looping with ng-repeat:</p>
-  <ul>
-    <li data-ng-repeat="man in names">
-      <!--{{ man }}-->
-      <span ng-bind="man"></span>
-    </li>
-  </ul>
+<div ng-app="" ng-init="infos=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+
+<p>Looping with objects:</p>
+<ul>
+  <li ng-repeat="info in infos">
+    <span ng-bind="info.name + ' ' + info.country"></span>
+  </li>
+</ul>
+
 </div>
 
 </body>

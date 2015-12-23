@@ -8,22 +8,11 @@
 First Name: <input type="text" ng-model="firstName"><br>
 Last Name: <input type="text" ng-model="lastName"><br>
 <br>
-Full Name:
-<!--{{fullName()}}-->
-<span ng-bind="fullName()"></span>
+Full Name: {{firstName + " " + lastName}}
 
 </div>
 
-<script>
-var app = angular.module('myApp', []);
-app.controller('personCtrl', function($scope) {
-    $scope.firstName = "John";
-    $scope.lastName = "Doe";
-    $scope.fullName = function() {
-        return $scope.firstName + " " + $scope.lastName;
-    };
-});
-</script>
+<script src="personController.js"></script>
 
 </body>
 </html>

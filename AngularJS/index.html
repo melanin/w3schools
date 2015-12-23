@@ -3,12 +3,12 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
-<div ng-app="" ng-init="firstName='John';lastName='Doe'">
+<div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
 
-<p>The full name is: {{ firstName + " " + lastName }}</p>
+<p>The name is {{ person.lastName }}</p>
 <br>
 Same example using ng-bind:
-<p>The full name is: <span ng-bind="firstName + ' ' + lastName"></span>
+<p>The name is <span ng-bind="person.lastName"></span></p>
 </div>
 
 </body>

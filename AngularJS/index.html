@@ -3,26 +3,17 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
-<div ng-app="myApp" ng-controller="myCtrl">
+<div ng-app="myApp" ng-controller="personCtrl">
 
-<h1>Names in the {{lastname}} Family:</h1>
-
-<ul>
-  <li ng-repeat="x in names">{{x}} {{lastname}}
-</ul>
+<p>
+	The name is 
+	<!--{{ lastName | uppercase }}	-->
+	<span ng-bind="lastName | uppercase"></span>
+</p>
 
 </div>
 
-<script>
-var app = angular.module('myApp', []);
-
-app.controller('myCtrl', function($scope, $rootScope) {
-  $scope.names = ["Emil", "Tobias", "Linus"];
-  $rootScope.lastname = "Refsnes";
-});
-</script>
-
-<p>Notice that the $rootScope can be accessed both inside and outside of the repetition object.</p>
+<script src="personController.js"></script>
 
 </body>
 </html>

@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<style>
-input.ng-invalid {
-    /*유효하지 않은 값(빈칸[required]이거나 이메일이 아니거나[type="email"])이면 적용*/
-    background-color: lightblue;
-}
-</style>
 <body>
 
-<form ng-app="" name="myForm">
-    Enter your E-mail:
-    <input name="" ng-model="loginEmail" type="email" required>
-</form>
+<div ng-app="myApp" ng-controller="myCtrl">
 
-<p>Edit the text field and it will get/lose classes according to the status.</p>
-<p>A text field with the required attribute is not valid when it is empty.</p>
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + " " + lastName}}
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+});
+</script>
 
 </body>
 </html>

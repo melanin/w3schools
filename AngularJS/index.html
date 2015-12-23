@@ -3,11 +3,12 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
-<div ng-app="" ng-init="quantity=1;cost=5">
-<p>Total in dollar: {{ quantity * cost }}</p>
+<div ng-app="" ng-init="firstName='John';lastName='Doe'">
+
+<p>The full name is: {{ firstName + " " + lastName }}</p>
 <br>
-<p>Same example using ng-bind:</p>
-<p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+Same example using ng-bind:
+<p>The full name is: <span ng-bind="firstName + ' ' + lastName"></span>
 </div>
 
 </body>

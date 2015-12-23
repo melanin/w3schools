@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<body>
+<body ng-app="myApp">
 
-<div ng-app="" ng-init="infos=[
-{name:'Jani',country:'Norway'},
-{name:'Hege',country:'Sweden'},
-{name:'Kai',country:'Denmark'}]">
+<w3-test-directive></w3-test-directive>
 
-<p>Looping with objects:</p>
-<ul>
-  <li ng-repeat="info in infos">
-    <span ng-bind="info.name + ' ' + info.country"></span>
-  </li>
-</ul>
-
-</div>
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+</script>
 
 </body>
 </html>

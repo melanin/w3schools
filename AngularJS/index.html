@@ -5,18 +5,20 @@
 
 <div ng-app="myApp" ng-controller="myCtrl">
 
-<h1>{{carname}}</h1>
+<input ng-model="name">
+
+<h1>My name is {{name}}</h1>
 
 </div>
 
 <script>
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
-    $scope.carname = "Volvo";
+    $scope.name = "John Doe";
 });
 </script>
 
-<p>The property "carname" was made in the controller, and can be referred to in the view by using the {{ }} brackets.</p>
+<p>When you change the name in the input field, the changes will affect the model, and it will also affect the name property in the controller.</p>
 
 </body>
 </html>

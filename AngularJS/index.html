@@ -1,33 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
-<div ng-app="myApp" ng-controller="personCtrl">
-
-<button ng-click="toggle()">Hide user</button>
-
-<p ng-show="isShowUser">
-First Name: <input type=text ng-model="person.firstName"><br>
-Last Name: <input type=text ng-model="person.lastName"><br><br>
-Full Name: {{person.firstName + " " + person.lastName}}
-</p>
-
+<div ng-app="myApp" ng-controller="formCtrl">
+  <form novalidate>
+    First Name:<br>
+    <input type="text" ng-model="user.firstName"><br>
+    Last Name:<br>
+    <input type="text" ng-model="user.lastName">
+    <br><br>
+    <button ng-click="reset()">RESET</button>
+  </form>
+  <p>form = {{user }}</p>
+  <p>master = {{master}}</p>
 </div>
 
 <script>
 var app = angular.module('myApp', []);
-app.controller('personCtrl', function($scope) {
-    $scope.person = {
-        firstName: "John",
-        lastName: "Doe"
+app.controller('formCtrl', function($scope) {
+    $scope.master = {firstName:"John", lastName:"Doe"};
+    $scope.reset = function() {
+        $scope.user = angular.copy($scope.master);
     };
-    $scope.isShowUser = true;
-    $scope.toggle = function() {
-        $scope.isShowUser = !$scope.isShowUser;
-    };
+    $scope.reset();
 });
-</script> 
+</script>
 
 </body>
 </html>

@@ -3,27 +3,17 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
-<div ng-app="myApp" ng-controller="personCtrl">
+<div ng-app="myApp" ng-controller="myCtrl">
 
-<button ng-click="toggle()">Hide user</button>
+<button ng-click="count = count + 1">Click Me!</button>
 
-<p ng-hide="isHideUser">
-First Name: <input type=text ng-model="firstName"><br>
-Last Name: <input type=text ng-model="lastName"><br><br>
-Full Name: {{firstName + " " + lastName}}
-</p>
+<p>{{ count }}</p>
 
 </div>
-
 <script>
 var app = angular.module('myApp', []);
-app.controller('personCtrl', function($scope) {
-    $scope.firstName = "John",
-    $scope.lastName = "Doe"
-    $scope.isHideUser = false;
-    $scope.toggle = function() {
-        $scope.isHideUser = !$scope.isHideUser;
-    };
+app.controller('myCtrl', function($scope) {
+    $scope.count = 0;
 });
 </script> 
 

@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<body>
+<link rel="stylesheet" href ="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script> 
 
-<div ng-app="myApp" ng-controller="customersCtrl"> 
-  <div ng-include="'myTable.htm'"></div>
+<body ng-app="myApp" ng-controller="userCtrl">
+
+<div class="container">
+    DIV
+  <div ng-include="'myUsers_List.html'"></div>
+  DIV2
+  <div ng-include="'myUsers_Form.html'"></div>
 </div>
-
-<script>
-var app = angular.module('myApp', []);
-app.controller('customersCtrl', function($scope, $http) {
-    $http.get("customers.php").then(function (response) {
-        $scope.names = response.data.records;
-    });
-});
-</script>
-
-<p>The HTML, and AngularJS code, for this table are located in the file "myTable.htm".</p>
+{{ users[1].fName }}
+<script src= "myUsers.js"></script>
 
 </body>
+
 </html>

@@ -19,23 +19,15 @@ app.controller("mainController", function($scope)
     
     $scope.Remove = function()
     {
-        // var beforeList = $scope._list;
-        // $scope._list = [];
-        // angular.forEach(beforeList, function(x)
-        //     {
-        //         if(!x.done)
-        //         {
-        //             $scope._list.push(x);
-        //         }                
-        //     }
-        // );
-        
-        for(var i=0; i<$scope._list.length; i++)
-        {
-            if($scope._list[i].done)
+        var beforeList = $scope._list;
+        $scope._list = [];
+        angular.forEach(beforeList, function(x)
             {
-                $scope._list.splice(i, 1);
+                if(!x.done)
+                {
+                    $scope._list.push(x);
+                }                
             }
-        }
+        );
     };
 });

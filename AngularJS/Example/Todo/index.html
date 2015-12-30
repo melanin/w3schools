@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    
+    <body ng-app="mainApp">
+        <h2>ToDo List</h2>
+        
+        <div ng-controller="mainController">
+            
+            <form ng-submit="Add()">
+                <input type="text" ng-model="_todo" size="30" placeholder="To do" required>
+                <input type="submit" value="register">
+            </form>
+            
+            <div ng-repeat="item in _list">
+                <!--{{ item }}-->
+                <input type="checkbox" ng-model="item.done">
+                <span ng-bind="item.todo"></span>
+            </div>
+            
+            <p>
+                <button ng-disabled="" ng-click="Remove()">Remove markded</button>
+            </p>
+        </div>
+    </body>
+    
+    <script src="mainModule.js"></script>
+    <script src="mainController.js"></script>
+    
+</html>
